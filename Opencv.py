@@ -1,41 +1,44 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture("videooo.mp4")
-
-while(1):
-    try:
-        _, frame = cap.read()
-        hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
+face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 
-        # dus_red = np.array([30,150,50])
-        # yuk_red = np.array([255,255,180])
+# cap = cv2.VideoCapture("videooo.mp4")
 
-        # mask = cv2.inRange(hsv,dus_red,yuk_red)
-        # res = cv2.bitwise_and(frame,frame,mask=mask)
+# while(1):
+#     try:
+#         _, frame = cap.read()
+#         hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
 
-        kernel = np.ones((15,15),np.float32)/225
 
-        smoothed = cv2.filter2D(frame,-2,kernel)
+#         # dus_red = np.array([30,150,50])
+#         # yuk_red = np.array([255,255,180])
+
+#         # mask = cv2.inRange(hsv,dus_red,yuk_red)
+#         # res = cv2.bitwise_and(frame,frame,mask=mask)
+
+#         kernel = np.ones((15,15),np.float32)/225
+
+#         smoothed = cv2.filter2D(frame,-2,kernel)
        
-        blur = cv2.GaussianBlur(frame,(15,15),0)    
+#         blur = cv2.GaussianBlur(frame,(15,15),0)    
 
-        median = cv2.medianBlur(frame,15)
+#         median = cv2.medianBlur(frame,15)
 
-        cv2.imshow('frame',frame)
-        # cv2.imshow('mask',mask)
-        cv2.imshow('res1',blur)
-        cv2.imshow('res2',smoothed)
-        cv2.imshow('res3',median)
+#         cv2.imshow('frame',frame)
+#         # cv2.imshow('mask',mask)
+#         cv2.imshow('res1',blur)
+#         cv2.imshow('res2',smoothed)
+#         cv2.imshow('res3',median)
 
-        k = cv2.waitKey(1) & 0xFF
-        if k == 27:
-            break
-    except:
-        break
-cv2.destroyAllWindows()
-cap.release()
+#         k = cv2.waitKey(1) & 0xFF
+#         if k == 27:
+#             break
+#     except:
+#         break
+# cv2.destroyAllWindows()
+# cap.release()
 
 
 # img = cv2.imread('indir.jpg')
