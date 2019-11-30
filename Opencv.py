@@ -18,13 +18,18 @@ while(1):
         kernel = np.ones((15,15),np.float32)/225
 
         smoothed = cv2.filter2D(frame,-2,kernel)
+       
+        blur = cv2.GaussianBlur(frame,(15,15),0)    
 
+        median = cv2.medianBlur(frame,15)
 
         cv2.imshow('frame',frame)
         # cv2.imshow('mask',mask)
-        cv2.imshow('res',smoothed)
+        cv2.imshow('res1',blur)
+        cv2.imshow('res2',smoothed)
+        cv2.imshow('res3',median)
 
-        k = cv2.waitKey(5) & 0xFF
+        k = cv2.waitKey(1) & 0xFF
         if k == 27:
             break
     except:
