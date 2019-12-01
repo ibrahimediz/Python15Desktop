@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>320</width>
-    <height>240</height>
+    <height>214</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="txtAd"/>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
@@ -41,7 +41,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit_2"/>
+     <widget class="QLineEdit" name="txtSoyad"/>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_3">
@@ -53,14 +53,14 @@
     <item row="2" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QRadioButton" name="radioButton_2">
+       <widget class="QRadioButton" name="rdb2">
         <property name="text">
          <string>Erkek</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="radioButton">
+       <widget class="QRadioButton" name="rdb1">
         <property name="text">
          <string>Kadın</string>
         </property>
@@ -71,22 +71,22 @@
     <item row="3" column="0">
      <widget class="QLabel" name="label_4">
       <property name="text">
-       <string>TextLabel</string>
+       <string>IL</string>
       </property>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QComboBox" name="comboBox"/>
+     <widget class="QComboBox" name="cmbIl"/>
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="label_5">
       <property name="text">
-       <string>TextLabel</string>
+       <string>ILCE</string>
       </property>
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QComboBox" name="comboBox_2"/>
+     <widget class="QComboBox" name="cmbIlce"/>
     </item>
    </layout>
   </widget>
@@ -106,7 +106,7 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>110</x>
      <y>160</y>
      <width>75</width>
      <height>23</height>
@@ -114,6 +114,19 @@
    </property>
    <property name="text">
     <string>İptal</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>160</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kamera</string>
    </property>
   </widget>
  </widget>

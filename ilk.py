@@ -4,7 +4,7 @@ from PyQt5 import uic
 class App(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.win = uic.loadUi("ilk.ui")
+        self.win = uic.loadUi(r"GUI\ilk.ui")
         self.win.but1.clicked.connect(self.AlVer)
         self.win.horse1.valueChanged.connect(self.degisim)
         self.win.chck1.clicked.connect(self.degisim2)

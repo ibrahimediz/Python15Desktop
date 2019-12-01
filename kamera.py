@@ -7,7 +7,7 @@ from PyQt5.QtGui import QImage,QPixmap
 class App(QWidget):
     def __init__(self):
         super().__init__()
-        self.win = uic.loadUi("kamera.ui")
+        self.win = uic.loadUi("GUI\kamera.ui")
         self.timer = QTimer()
         self.win.btKamera.clicked.connect(self.btClick)
         self.win.show()
@@ -24,8 +24,8 @@ class App(QWidget):
         
 
     def KameraAc(self):
-        face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-        eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
+        face_cascade = cv2.CascadeClassifier("cascades\haarcascade_frontalface_default.xml")
+        eye_cascade = cv2.CascadeClassifier("cascades\haarcascade_eye.xml")
         while 1:
             ret,frame = self.cam.read()
             buyumeFaktor = 0.5
