@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Kamera</string>
   </property>
   <widget class="QLabel" name="kamera">
    <property name="geometry">
@@ -24,6 +24,32 @@
    </property>
    <property name="text">
     <string>Kamera</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btKamera">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>290</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kamera</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btKapat">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>290</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kapat</string>
    </property>
   </widget>
  </widget>
