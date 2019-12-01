@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "c:\\ProgramData\\Anaconda3\\envs\\masaustu\\python.exe",
+    "python.pythonPath": "C:\\Anaconda3\\envs\\Masaustu\\python.exe",
     "sqltools.connections": [
         {
             "database": "${workspaceFolder}\\DB/FACEDET.db",
