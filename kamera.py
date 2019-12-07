@@ -4,13 +4,13 @@ from PyQt5.QtCore import QTimer
 import cv2
 from PyQt5.QtGui import QImage,QPixmap
 
-class App(QWidget):
+class Kamera(QWidget):
     def __init__(self):
         super().__init__()
         self.win = uic.loadUi("GUI\kamera.ui")
         self.timer = QTimer()
         self.win.btKamera.clicked.connect(self.btClick)
-        self.win.show()
+
 
     def btClick(self):
         if not self.timer.isActive():
@@ -63,5 +63,6 @@ class App(QWidget):
 if __name__ == '__main__':
     import sys
     app = QApplication(sys.argv)
-    ex = App()
+    ex = Kamera()
+    ex.show()
     sys.exit(app.exec_())

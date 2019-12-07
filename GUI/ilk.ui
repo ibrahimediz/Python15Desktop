@@ -20,7 +20,7 @@
       <x>0</x>
       <y>10</y>
       <width>351</width>
-      <height>391</height>
+      <height>231</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -30,15 +30,27 @@
      <property name="verticalSpacing">
       <number>25</number>
      </property>
+     <property name="leftMargin">
+      <number>15</number>
+     </property>
+     <property name="topMargin">
+      <number>15</number>
+     </property>
+     <property name="rightMargin">
+      <number>15</number>
+     </property>
+     <property name="bottomMargin">
+      <number>15</number>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="lbl1">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Adı</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="txt1">
+      <widget class="QLineEdit" name="txtAdi">
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
        </property>
@@ -47,83 +59,101 @@
      <item row="1" column="0">
       <widget class="QLabel" name="lbl2">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Soyadı</string>
        </property>
       </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="cmb1"/>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="lbl3">
        <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QSlider" name="horse1">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <string>İl</string>
        </property>
       </widget>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="lbl4">
        <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QRadioButton" name="rdb1">
-       <property name="text">
-        <string>RadioButton</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-       <property name="checked">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QRadioButton" name="rdb2">
-       <property name="text">
-        <string>RadioButton</string>
+        <string>İlçe</string>
        </property>
       </widget>
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="lbl5">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Cinsiyet</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="lbl6">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="txtSoyadi"/>
      </item>
-     <item row="5" column="1">
-      <widget class="QCheckBox" name="chck1">
-       <property name="text">
-        <string>Görünür Yap</string>
-       </property>
-      </widget>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="cmbIL"/>
      </item>
-     <item row="6" column="1">
-      <widget class="QPushButton" name="but1">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="cmbILCE"/>
+     </item>
+     <item row="4" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QRadioButton" name="rdbKiz">
+         <property name="text">
+          <string>Kız</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="rdbErkek">
+         <property name="text">
+          <string>Erkek</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="btKaydet">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kaydet</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btTemizle">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>260</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Temizle</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btKamera">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>260</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Yüzü Tanımla</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -135,13 +165,6 @@
      <height>18</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuAra">
-    <property name="title">
-     <string>Araç</string>
-    </property>
-    <addaction name="actionTemizle"/>
-   </widget>
-   <addaction name="menuAra"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionTemizle">
