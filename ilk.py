@@ -11,6 +11,8 @@ class App(QMainWindow):
         self.win.cmbIL.currentIndexChanged.connect(self.ilceDoldur)
         self.win.btKaydet.clicked.connect(self.kaydet)
         self.win.btKamera.clicked.connect(self.kameraAc)
+       
+        self.cam = Kamera()
         self.win.show()
        
 
@@ -24,8 +26,7 @@ class App(QMainWindow):
         
 
     def kameraAc(self):
-        cam = Kamera()
-        cam.show()
+        self.cam.widg.show()
        
 
 

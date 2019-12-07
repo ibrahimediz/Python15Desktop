@@ -7,9 +7,15 @@ from PyQt5.QtGui import QImage,QPixmap
 class Kamera(QWidget):
     def __init__(self):
         super().__init__()
-        self.win = uic.loadUi("GUI\kamera.ui")
+        self.widg = uic.loadUi("GUI\kamera.ui")
         self.timer = QTimer()
-        self.win.btKamera.clicked.connect(self.btClick)
+        self.widg.btKapat.clicked.connect(self.kapat)
+        self.widg.btKamera.clicked.connect(self.btClick)
+
+    def kapat(self):
+        self.cam.release()
+        self.timer.stop()
+        self.widg.close()
 
 
     def btClick(self):
@@ -50,7 +56,7 @@ class Kamera(QWidget):
             height,width,channel = frame.shape
             step = channel*width
             qImg = QImage(frame.data,width,height,step,QImage.Format_RGB888)
-            self.win.kamera.setPixmap(QPixmap.fromImage(qImg))
+            self.widg.kamera.setPixmap(QPixmap.fromImage(qImg))
             ####################################################
             k = cv2.waitKey(100) & 0xFF
             if k == 27:
@@ -64,5 +70,5 @@ if __name__ == '__main__':
     import sys
     app = QApplication(sys.argv)
     ex = Kamera()
-    ex.show()
+    ex.widg.show()
     sys.exit(app.exec_())
