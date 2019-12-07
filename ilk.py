@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import QApplication,QMainWindow,QLineEdit,QMessageBox
 from PyQt5 import uic
 from DB import DB
-from kamera import Kamera
+from kamera import Kamera as cam2
+from kamera2 import Kamera as cam1
 
 class App(QMainWindow):
     def __init__(self):
@@ -11,8 +12,9 @@ class App(QMainWindow):
         self.win.cmbIL.currentIndexChanged.connect(self.ilceDoldur)
         self.win.btKaydet.clicked.connect(self.kaydet)
         self.win.btKamera.clicked.connect(self.kameraAc)
-       
-        self.cam = Kamera()
+        self.win.btKamera_2.clicked.connect(self.kameraAc2)
+        self.cam = cam1()
+        self.cam2 = cam2()
         self.win.show()
        
 
@@ -26,9 +28,13 @@ class App(QMainWindow):
         
 
     def kameraAc(self):
+        self.cam.adiSoyadi = self.adi+"_"+self.soyadi
+        self.cam.olustur()
         self.cam.widg.show()
        
-
+    def kameraAc2(self):
+        self.cam2.widg.show()
+       
 
 
     def ilDoldur(self):
@@ -39,12 +45,12 @@ class App(QMainWindow):
             self.win.cmbIL.addItem(IlAd)
 
     def kaydet(self):
-        adi = self.win.txtAdi.text()
-        soyadi = self.win.txtSoyadi.text()                            
+        self.adi = self.win.txtAdi.text()
+        self.soyadi = self.win.txtSoyadi.text()                            
         il = self.win.cmbIL.currentIndex()
         ilce = self.win.cmbILCE.currentIndex()
         db = DB()
-        if db.PersonelEkleme(adi,soyadi,il,ilce):
+        if db.PersonelEkleme(self.adi,self.soyadi,il,ilce):
             QMessageBox.information(self,"Bilgi","Bilgileriniz başarıyla kaydedildi")
             self.win.btKamera.setEnabled(True)
 

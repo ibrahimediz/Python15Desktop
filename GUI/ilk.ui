@@ -52,7 +52,7 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="txtAdi">
        <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
+        <enum>QLineEdit::Normal</enum>
        </property>
       </widget>
      </item>
@@ -153,6 +153,22 @@
     </property>
     <property name="text">
      <string>Yüzü Tanımla</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btKamera_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tanıma</string>
     </property>
    </widget>
   </widget>
